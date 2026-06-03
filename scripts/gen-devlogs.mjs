@@ -168,7 +168,7 @@ ${flyway.size ? `<h2>🗄️ DB 스키마 (Flyway)</h2><p>${[...flyway].sort().m
 ${top.map((c) => `<li class="cmt"><span class="badge b-mute">${c.agent}</span> ${esc(c.subj.slice(0, 110))} <code>${c.h.slice(0, 7)}</code> <span style="color:var(--mute)">+${c.add}/−${c.del}</span></li>`).join('\n')}
 </ul>
 
-${prs.length ? `<h2>🔀 머지된 PR (${prs.length})</h2><p>${prs.map((n) => `<a class="badge b-ok" href="https://github.com/sp-daewoon/magicJar/pull/${n}" style="text-decoration:none">#${n}</a>`).join(' ')}</p>` : ''}
+${prs.length ? `<h2>🔀 머지된 PR (${prs.length})</h2><p>${prs.map((n) => `<span class="badge b-ok">#${n}</span>`).join(' ')}</p>` : ''}
 
 <footer style="margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:#888;font-size:.82rem">
 자동 생성 · <code>scripts/gen-devlogs.mjs</code> · 비공개 레포 커밋 메타데이터 집계 (소스·시크릿 미포함)
