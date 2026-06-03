@@ -3,7 +3,9 @@
 > 개인 맞춤형 **한국 주식 자동매매 시스템**. 룰 기반 quant trading 본체 + AI 분석 보조.
 > 본 레포는 **공개 포트폴리오**입니다 — 실제 구현 소스는 비공개이며, 여기에는 아키텍처 결정·설계 문서·활동 통계·대표 코드 발췌를 공개합니다.
 
-**[📊 엔지니어링 활동 통계 대시보드 →](stats.html)**
+**🌐 라이브 사이트: [sp-daewoon.github.io/magicjar-portfolio](https://sp-daewoon.github.io/magicjar-portfolio/)** · **[📊 활동 통계 대시보드](https://sp-daewoon.github.io/magicjar-portfolio/stats.html)**
+
+![Engineering activity dashboard](assets/stats.png)
 
 ---
 
