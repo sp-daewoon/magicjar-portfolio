@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>magicJar — Engineering Activity</title>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--bd:#30363d;--fg:#e6edf3;--mut:#8b949e;--acc:#58a6ff;--grn:#3fb950;--ylw:#d29922;--pur:#bc8cff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 24px}
+  h1{font-size:30px;margin:0 0 6px} .sub{color:var(--mut);margin:0 0 32px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:36px}
+  .kpi{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px 20px}
+  .kpi .n{font-size:30px;font-weight:700} .kpi .l{color:var(--mut);font-size:13px;margin-top:2px}
+  .card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:24px;margin-bottom:24px}
+  .card h2{font-size:17px;margin:0 0 18px;display:flex;align-items:center;gap:8px}
+  .row{display:flex;align-items:center;gap:12px;margin:9px 0;font-size:14px}
+  .row .lbl{width:200px;color:var(--fg)} .row .lbl small{color:var(--mut)}
+  .row .v{width:54px;text-align:right;color:var(--mut);font-variant-numeric:tabular-nums}
+  .bar{flex:1;height:9px;background:#21262d;border-radius:5px;overflow:hidden}
+  .fill{height:100%;border-radius:5px}
+  .months{display:flex;align-items:flex-end;gap:6px;height:140px;padding-top:8px}
+  .mcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%}
+  .mcol .mb{width:100%;background:var(--acc);border-radius:4px 4px 0 0;min-height:3px}
+  .mcol .ml{color:var(--mut);font-size:11px} .mcol .mv{font-size:12px;color:var(--fg)}
+  .tag{display:inline-block;background:#1f6feb22;color:var(--acc);border:1px solid #1f6feb44;border-radius:999px;padding:2px 10px;font-size:12px;margin:3px}
+  .note{color:var(--mut);font-size:13px;margin-top:8px}
+  footer{color:var(--mut);font-size:12px;text-align:center;margin-top:40px;border-top:1px solid var(--bd);padding-top:20px}
+  .legend{display:flex;gap:16px;font-size:13px;color:var(--mut);margin-top:10px}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+</style></head><body><div class="wrap">
+
+<h1>magicJar — Engineering Activity</h1>
+<p class="sub">개인 맞춤형 한국 주식 자동매매 시스템 · 2026-04-25 → 2026-06-04 · 비공개 레포 메타데이터 집계</p>
+
+<div class="grid">
+  <div class="kpi"><div class="n">1,307</div><div class="l">Commits</div></div>
+  <div class="kpi"><div class="n">104</div><div class="l">Merged PRs</div></div>
+  <div class="kpi"><div class="n">43</div><div class="l">Releases</div></div>
+  <div class="kpi"><div class="n">179,037</div><div class="l">Lines (Kotlin+TS)</div></div>
+  <div class="kpi"><div class="n">2,449</div><div class="l">Tracked files</div></div>
+  <div class="kpi"><div class="n">10</div><div class="l">Contributors</div></div>
+</div>
+
+<div class="card">
+  <h2>📈 월별 커밋 추이</h2>
+  <div class="months">
+    <div class="mcol"><div class="mv">63</div><div class="mb" style="height:5%"></div><div class="ml">2026-04</div></div><div class="mcol"><div class="mv">1195</div><div class="mb" style="height:100%"></div><div class="ml">2026-05</div></div><div class="mcol"><div class="mv">49</div><div class="mb" style="height:4%"></div><div class="ml">2026-06</div></div>
+  </div>
+  <p class="note">6주간 집중 개발 — 피크 주간 432 커밋/주. 단발성이 아닌 지속적 고밀도 활동.</p>
+</div>
+
+<div class="card">
+  <h2>🤖 기여자 구성 — Human-orchestrated AI agent fleet</h2>
+  <div class="row"><div class="lbl">architect <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:100.0%;background:var(--acc)"></div></div><div class="v">308</div></div><div class="row"><div class="lbl">orchestrator <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:87.7%;background:var(--acc)"></div></div><div class="v">270</div></div><div class="row"><div class="lbl">backend-core <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:79.9%;background:var(--acc)"></div></div><div class="v">246</div></div><div class="row"><div class="lbl">frontend <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:50.3%;background:var(--acc)"></div></div><div class="v">155</div></div><div class="row"><div class="lbl">market-data <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:47.7%;background:var(--acc)"></div></div><div class="v">147</div></div><div class="row"><div class="lbl">Human Lead (orchestration) <small>(설계·지휘)</small></div><div class="bar"><div class="fill" style="width:28.2%;background:var(--grn)"></div></div><div class="v">87</div></div><div class="row"><div class="lbl">strategy <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:11.0%;background:var(--acc)"></div></div><div class="v">34</div></div><div class="row"><div class="lbl">chart-curator <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:10.4%;background:var(--acc)"></div></div><div class="v">32</div></div><div class="row"><div class="lbl">ai <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:6.8%;background:var(--acc)"></div></div><div class="v">21</div></div><div class="row"><div class="lbl">qa <small>(AI agent)</small></div><div class="bar"><div class="fill" style="width:2.3%;background:var(--acc)"></div></div><div class="v">7</div></div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--grn)"></span>Human lead 87 커밋 — 아키텍처·ADR·머지·방향성</span>
+    <span><span class="dot" style="background:var(--acc)"></span>AI agents 1,220 커밋 — 7개 전문 에이전트 병렬 실행</span>
+  </div>
+  <p class="note">사람(최고 관리자)이 7명의 전문 AI 에이전트(architect·backend-core·market-data·strategy-engine·ai-engineer·frontend·qa)를 오케스트레이션하는 멀티에이전트 개발 하네스. 모든 코드는 PR·리뷰·ADR 게이트를 통과.</p>
+</div>
+
+<div class="card">
+  <h2>🗂️ 코드베이스 구성</h2>
+  <div class="row"><div class="lbl">.kt</div><div class="bar"><div class="fill" style="width:100.0%;background:var(--pur)"></div></div><div class="v">1,118</div></div><div class="row"><div class="lbl">.md</div><div class="bar"><div class="fill" style="width:64.9%;background:var(--pur)"></div></div><div class="v">726</div></div><div class="row"><div class="lbl">.tsx</div><div class="bar"><div class="fill" style="width:16.5%;background:var(--pur)"></div></div><div class="v">184</div></div><div class="row"><div class="lbl">.ts</div><div class="bar"><div class="fill" style="width:13.2%;background:var(--pur)"></div></div><div class="v">148</div></div><div class="row"><div class="lbl">.html</div><div class="bar"><div class="fill" style="width:9.1%;background:var(--pur)"></div></div><div class="v">102</div></div><div class="row"><div class="lbl">.sql</div><div class="bar"><div class="fill" style="width:6.0%;background:var(--pur)"></div></div><div class="v">67</div></div><div class="row"><div class="lbl">.gitkeep</div><div class="bar"><div class="fill" style="width:1.4%;background:var(--pur)"></div></div><div class="v">16</div></div><div class="row"><div class="lbl">.png</div><div class="bar"><div class="fill" style="width:1.3%;background:var(--pur)"></div></div><div class="v">14</div></div><div class="row"><div class="lbl">.yml</div><div class="bar"><div class="fill" style="width:1.1%;background:var(--pur)"></div></div><div class="v">12</div></div><div class="row"><div class="lbl">.json</div><div class="bar"><div class="fill" style="width:1.0%;background:var(--pur)"></div></div><div class="v">11</div></div>
+  <p class="note">Kotlin 129,589 LOC · TypeScript 49,448 LOC · SQL(Flyway) 2,665 LOC · 7 Gradle 모듈 (domain·api·batch·consumer·persistence·indicator·strategy-engine)</p>
+</div>
+
+<div class="card">
+  <h2>🏷️ 릴리즈 (43)</h2>
+  <span class="tag">v0.1.0</span><span class="tag">v1.0.1</span><span class="tag">v2.0.0</span><span class="tag">v2.0.1</span><span class="tag">v2.9.9</span><span class="tag">v3.0.0</span><span class="tag">v3.0.1</span><span class="tag">v3.1.0</span><span class="tag">v3.1.1</span><span class="tag">v3.2.1</span><span class="tag">v3.2.2</span><span class="tag">v3.2.3</span><span class="tag">v3.3.0</span><span class="tag">v3.3.1</span><span class="tag">v3.4.0</span><span class="tag">v3.5.0</span><span class="tag">v3.6.0</span><span class="tag">v3.6.1</span><span class="tag">v3.6.2</span><span class="tag">v3.6.3</span><span class="tag">v3.6.4</span><span class="tag">v3.6.5</span><span class="tag">v3.6.6</span><span class="tag">v3.6.7</span><span class="tag">v3.6.8</span><span class="tag">v3.6.9</span><span class="tag">v3.6.10</span><span class="tag">v3.6.11</span><span class="tag">v3.6.12</span><span class="tag">v3.6.13</span><span class="tag">v3.6.16</span><span class="tag">v3.6.17</span><span class="tag">v3.6.18</span><span class="tag">v3.6.19</span><span class="tag">v3.7.0</span><span class="tag">v3.7.1</span><span class="tag">v3.8.0</span><span class="tag">v3.8.1</span><span class="tag">v3.9.0</span><span class="tag">v3.9.1</span><span class="tag">v3.10.0</span><span class="tag">v3.10.1</span><span class="tag">v3.11.0</span>
+  <p class="note">SemVer 기반 릴리즈 자동화 — baseline 문서 → tag → release notes 자동 합성 파이프라인.</p>
+</div>
+
+<footer>
+  자동 생성 · <code>scripts/gen-stats.mjs</code> · 소스코드·커밋 본문 미포함, 메타데이터 통계만 공개<br>
+  Stack: Spring Boot 3.3 · Kotlin 2.0 (K2) · Spring AI · React 19 · TradingView LWC · KIS OpenAPI · Kafka · Postgres · Redis
+</footer>
+</div></body></html>
