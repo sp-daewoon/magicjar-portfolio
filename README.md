@@ -7,6 +7,14 @@
 
 ![Engineering activity dashboard](assets/stats.png)
 
+## 실제 앱 화면
+
+> 로컬 풀스택(Spring Boot API · Kafka consumer · React 프런트) 기동 후 Playwright로 캡처 · 모의(MOCK) 투자 모드 · 실데이터 기반. **[전체 화면 갤러리 →](https://sp-daewoon.github.io/magicjar-portfolio/showcase/screens/)**
+
+| 종목 상세 (실시간 차트·주문) | 대시보드 (계좌·보유·지수) |
+|---|---|
+| ![종목 상세](showcase/screens/symbol-detail-samsung.png) | ![대시보드](showcase/screens/dashboard.png) |
+
 ---
 
 ## 한눈에 보기

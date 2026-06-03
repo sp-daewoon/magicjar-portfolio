@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>magicJar — 실제 앱 화면</title>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--bd:#30363d;--fg:#e6edf3;--mut:#8b949e;--acc:#58a6ff}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:48px 24px}
+  a.back{color:var(--acc);text-decoration:none;font-size:14px} a.back:hover{text-decoration:underline}
+  h1{font-size:28px;margin:10px 0 6px} .sub{color:var(--mut);margin:0 0 32px}
+  .shot{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:28px}
+  .shot h2{font-size:16px;margin:0;padding:14px 18px;border-bottom:1px solid var(--bd)}
+  .shot h2 small{color:var(--mut);font-weight:400;margin-left:8px}
+  .shot img{display:block;width:100%;height:auto}
+</style></head><body><div class="wrap">
+<a class="back" href="../../index.html">← 포트폴리오 홈</a>
+<h1>실제 앱 화면</h1>
+<p class="sub">로컬 풀스택(Spring Boot API·Kafka consumer·React 프런트) 기동 후 Playwright로 캡처 · 모의(MOCK) 투자 모드 · 실데이터 기반</p>
+
+<div class="shot"><h2>종목 상세 <small>실시간 시세 · TradingView 캔들차트 · FVG/OrderBlock 오버레이 · 주문 패널</small></h2><img src="symbol-detail-samsung.png" alt="종목 상세"></div>
+<div class="shot"><h2>대시보드 <small>시장지수 · 계좌요약 · 보유종목 · 잔고 (KIS 실시간 push)</small></h2><img src="dashboard.png" alt="대시보드"></div>
+<div class="shot"><h2>관심종목 <small>Watchlist 실시간 시세</small></h2><img src="watchlist.png" alt="관심종목"></div>
+<div class="shot"><h2>전략 빌더 <small>차트 조건식 DSL 작성</small></h2><img src="strategy-builder.png" alt="전략 빌더"></div>
+<div class="shot"><h2>백테스트 <small>저장 전략 과거 데이터 시뮬레이션</small></h2><img src="backtest.png" alt="백테스트"></div>
+<div class="shot"><h2>전략 목록 <small>저장된 전략 관리</small></h2><img src="strategy-list.png" alt="전략 목록"></div>
+<div class="shot"><h2>성과 대시보드 <small>수익률 · 성과 지표</small></h2><img src="performance.png" alt="성과 대시보드"></div>
+<div class="shot"><h2>시장 동향 <small>섹터/지수 트렌드</small></h2><img src="market-trend.png" alt="시장 동향"></div>
+<div class="shot"><h2>포지션 <small>보유 포지션</small></h2><img src="positions.png" alt="포지션"></div>
+<div class="shot"><h2>주문 <small>주문 내역</small></h2><img src="orders.png" alt="주문"></div>
+<div class="shot"><h2>매매일지 <small>Trading journal</small></h2><img src="journal.png" alt="매매일지"></div>
+</div></body></html>
