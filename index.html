@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>magicJar — Engineering Portfolio</title>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--bd:#30363d;--fg:#e6edf3;--mut:#8b949e;--acc:#58a6ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:56px 24px}
+  h1{font-size:34px;margin:0 0 8px} .tag{color:var(--mut);margin:0 0 8px}
+  .kpis{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 36px}
+  .kpi{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 16px;font-size:14px}
+  .kpi b{font-size:20px;color:var(--acc)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  a.card{display:block;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:22px;text-decoration:none;color:var(--fg);transition:.15s}
+  a.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+  a.card h3{margin:0 0 6px;font-size:17px} a.card p{margin:0;color:var(--mut);font-size:14px}
+  .stack{color:var(--mut);font-size:14px;margin-top:36px;border-top:1px solid var(--bd);padding-top:20px}
+  footer{color:var(--mut);font-size:13px;margin-top:24px}
+</style></head><body><div class="wrap">
+
+<h1>magicJar <span style="font-size:18px;color:var(--mut)">마법의항아리</span></h1>
+<p class="tag">개인 맞춤형 한국 주식 자동매매 시스템 · 룰 기반 quant trading + AI 분석 보조</p>
+
+<div class="kpis">
+  <div class="kpi"><b>1,300+</b> commits</div>
+  <div class="kpi"><b>100+</b> PRs</div>
+  <div class="kpi"><b>40+</b> releases</div>
+  <div class="kpi"><b>100+</b> ADRs</div>
+  <div class="kpi"><b>180K+</b> LOC</div>
+  <div class="kpi"><b>7</b> modules</div>
+</div>
+
+<div class="cards">
+  <a class="card" href="stats.html"><h3>📊 활동 통계 대시보드</h3><p>커밋·PR·릴리즈·기여자(AI 에이전트 팀) 자동 집계</p></a>
+  <a class="card" href="showcase/system-dashboard.html"><h3>🗂️ 시스템 대시보드</h3><p>전체 시스템 자원 인덱스 (147KB)</p></a>
+  <a class="card" href="showcase/baseline-v3.10.0/html/index.html"><h3>📐 기능정의서 (baseline)</h3><p>아키텍처·데이터흐름·시퀀스·기능·UI·이력 7종</p></a>
+  <a class="card" href="showcase/devlog/index.html"><h3>📓 개발일지</h3><p>일자별 작업 기록</p></a>
+  <a class="card" href="https://github.com/sp-daewoon/magicjar-portfolio/blob/main/docs/CODE-HIGHLIGHTS.md"><h3>💻 대표 코드 발췌</h3><p>sealed class 도메인 모델 · BigDecimal 금융 연산 · 헥사고날</p></a>
+  <a class="card" href="https://github.com/sp-daewoon/magicjar-portfolio/blob/main/docs/master-architecture.md"><h3>🏛️ 마스터 아키텍처</h3><p>4영역 구조 + ADR 100+ 결정 이력</p></a>
+</div>
+
+<p class="stack"><b>Stack</b> — Spring Boot 3.3 · Kotlin 2.0 (K2) · JDK 21 · Spring AI · React 19 · TypeScript · TradingView Lightweight Charts · 한국투자증권 KIS OpenAPI (REST+WebSocket) · Kafka · PostgreSQL · Redis · Docker Compose</p>
+<footer>본 사이트는 채용·포트폴리오 목적의 공개 미러입니다. 운영 소스코드·시크릿·실계좌 정보는 포함하지 않습니다.</footer>
+</div></body></html>
