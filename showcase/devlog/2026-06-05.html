@@ -1,0 +1,81 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>magicJar devlog · 2026-06-05 (금)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--brown:#5b3a1f;--cream:#fff8ed;--paper:#fafaf7;--line:#d8d4c8;--ok:#2f7a3a;--warn:#b58606;--pending:#1c5fa6;--todo:#b03060;--mute:#6a6a6a}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",sans-serif;background:var(--paper);color:#222;max-width:1080px;margin:0 auto;padding:36px 24px 80px;line-height:1.65}
+h1{color:var(--brown);border-bottom:2px solid var(--brown);padding-bottom:8px;margin-bottom:6px;font-size:1.55rem}
+.subtitle{color:var(--mute);font-size:.95rem;margin-bottom:24px}
+h2{color:var(--brown);margin-top:34px;border-left:4px solid var(--brown);padding-left:10px;font-size:1.15rem}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.88rem}
+th,td{padding:6px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--brown);font-weight:600}
+tr:nth-child(even) td{background:#fcfcf8}
+code{background:#f3efe6;padding:1px 6px;border-radius:3px;font-size:.85em;color:#333}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;margin:0 2px}
+.b-ok{background:#e3f1e6;color:var(--ok);border:1px solid var(--ok)}
+.b-pending{background:#e3edf7;color:var(--pending);border:1px solid var(--pending)}
+.b-todo{background:#fce6ec;color:var(--todo);border:1px solid var(--todo)}
+.b-mute{background:#f0f0f0;color:var(--mute);border:1px solid var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.card .n{font-size:1.5rem;font-weight:700;color:var(--brown)} .card .l{font-size:.82rem;color:var(--mute)}
+.nav-back{display:inline-block;margin-bottom:18px;color:var(--brown);text-decoration:none;font-size:.9rem}
+.nav-back:hover{text-decoration:underline}
+.cmt{font-size:.86rem;margin:3px 0;padding-left:4px}
+.cmt code{font-size:.8em}
+ul.bare{list-style:none;padding:0}</style></head><body>
+<a class="nav-back" href="index.html">← 개발일지 목록</a>
+<h1>2026-06-05 (금)</h1>
+<div class="subtitle">커밋 로그 기반 자동 재구성 (backfill) · magicJar 한국 주식 자동매매 시스템</div>
+
+<div class="grid">
+  <div class="card"><div class="n">59</div><div class="l">커밋</div></div>
+  <div class="card"><div class="n">7</div><div class="l">활동 에이전트</div></div>
+  <div class="card"><div class="n">0</div><div class="l">머지 PR</div></div>
+  <div class="card"><div class="n">253</div><div class="l">변경 파일</div></div>
+  <div class="card"><div class="n" style="color:var(--ok)">+16,694</div><div class="l">추가 라인</div></div>
+  <div class="card"><div class="n" style="color:var(--todo)">−591</div><div class="l">삭제 라인</div></div>
+</div>
+
+<h2>👥 에이전트별 작업</h2>
+<table><thead><tr><th>에이전트</th><th>역할</th><th>커밋</th><th>대표 작업</th></tr></thead><tbody>
+<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>14</td><td>fix(chart): unify time labels and repair minute volume</td></tr>
+<tr><td><code>backend-core</code></td><td>백엔드 코어</td><td>12</td><td>chore(task): mark external-order-user-mapping done (PR #752)</td></tr>
+<tr><td><code>strategy</code></td><td>전략 엔진</td><td>10</td><td>fix(ai): dsl-translate 프롬프트 캔들 식별자에 open 추가 — 전수 흐름 검토 후속</td></tr>
+<tr><td><code>market-data</code></td><td>시세 데이터</td><td>6</td><td>chore(task): mark T-ws-ghost-reconnect-loop done (PR #748)</td></tr>
+<tr><td><code>frontend</code></td><td>프런트</td><td>6</td><td>chore(task): mark R3-a scale-in builder UI done (PR #747)</td></tr>
+<tr><td><code>architect</code></td><td>수석 설계</td><td>6</td><td>docs(architect): scale-in/exit spec amend — PR #741 검수 4건 (부분익절 중복발화 방</td></tr>
+<tr><td><code>qa</code></td><td>품질</td><td>5</td><td>chore(task): mark qa S9 scale-in fill reverification done (PR #753)</td></tr>
+</tbody></table>
+
+<h2>📐 아키텍처 결정 (ADR)</h2><p><span class="badge b-pending">ADR 0080</span> <span class="badge b-pending">ADR 0108</span> <span class="badge b-pending">ADR 0109</span> <span class="badge b-pending">ADR 0110</span> <span class="badge b-pending">ADR 0111</span></p>
+
+<h2>🗄️ DB 스키마 (Flyway)</h2><p><code>V64__strategy_position.sql</code> · <code>V65__strategy_scale_in_exit.sql</code> · <code>V66__order_request_source_external.sql</code></p>
+
+<h2>🧩 모듈별 변경 파일</h2>
+<p><span class="badge b-mute">_workspace · 94</span> <span class="badge b-mute">consumer · 66</span> <span class="badge b-mute">frontend · 61</span> <span class="badge b-mute">api · 40</span> <span class="badge b-mute">root · 26</span> <span class="badge b-mute">domain · 25</span> <span class="badge b-mute">docs · 10</span> <span class="badge b-mute">strategy-engine · 8</span> <span class="badge b-mute">batch · 3</span> <span class="badge b-mute">scripts · 1</span> <span class="badge b-mute">.claude · 1</span></p>
+
+<h2>📝 주요 커밋 (변경량 상위)</h2>
+<ul class="bare">
+<li class="cmt"><span class="badge b-mute">orchestrator</span> feat(strategy): add research proposal agent <code>7ad3d31</code> <span style="color:var(--mute)">+1974/−0</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): R3-a 분할매수 — 빌더 scale-in/exit 입력 + 전략별 포지션 + save/조회 API wiring <code>a153c57</code> <span style="color:var(--mute)">+1568/−1</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): R3-b 분할매수 — 리플레이·백테스트 ScaleInExitCalculator 정합 <code>6d34db7</code> <span style="color:var(--mute)">+1110/−14</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> fix(chart): unify time labels and repair minute volume <code>1793f53</code> <span style="color:var(--mute)">+856/−205</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(strategy): R2-2 분할매수 — 체결 StrategyPosition upsert + RiskGateway SELL 전략별 분기 + 어댑터 <code>c02389a</code> <span style="color:var(--mute)">+1003/−10</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): 캔들 수집 건강도(candle-health) reason 모델 + REST 노출 <code>1b50951</code> <span style="color:var(--mute)">+856/−0</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): R2-1 분할매수/exit 엔진 — ScaleInExitCalculator + 시그널 통합 + toggle <code>bcc1c58</code> <span style="color:var(--mute)">+740/−4</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> fix(ratelimit): 주문 path KIS rate limit 우선권 보호 — priority 차등 라우팅 + approval limiter 합류 + account refresh single <code>2837b2c</code> <span style="color:var(--mute)">+638/−89</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> fix(order): 외부(HTS) 주문 흡수 user 매핑·mode·source 오기록 정정 (P1 자본 path) <code>08c7dbb</code> <span style="color:var(--mute)">+628/−32</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 캔들 stale reason 화면 1줄 표시 (readiness P1) <code>e5312bb</code> <span style="color:var(--mute)">+572/−0</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> fix(consumer): admin 백필 throttle 일원화 + circuit breaker + sanity monotonic 정정 <code>ee72e62</code> <span style="color:var(--mute)">+523/−30</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(architect): 분할 매수·비중·익절손절 청산·전략별 포지션 귀속 통합 spec + ADR 0110·0111 <code>c1bed06</code> <span style="color:var(--mute)">+519/−2</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(architect): REAL canary runbook + spec + ADR 0109 (canary hard cap ENV) <code>313c2d8</code> <span style="color:var(--mute)">+519/−2</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> fix(scenario): 리플레이 ↔ 라이브 게이트 정합 (readiness P1) <code>1960ed2</code> <span style="color:var(--mute)">+496/−24</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(adr): ADR 0108 — 평가(assessment) 문서 docs/assessments 관리 구조 신설 <code>7f540d8</code> <span style="color:var(--mute)">+510/−1</span></li>
+<li class="cmt"><span class="badge b-mute">qa</span> test(qa): S9 분할매수 fill 레이어 재검증 — 직전 qa F-1 공백 마감 (toggle ON, 7/7 GREEN) <code>2cd7fdd</code> <span style="color:var(--mute)">+485/−8</span></li>
+</ul>
+
+
+
+<footer style="margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:#888;font-size:.82rem">
+자동 생성 · <code>scripts/gen-devlogs.mjs</code> · 비공개 레포 커밋 메타데이터 집계 (소스·시크릿 미포함)
+</footer></body></html>
