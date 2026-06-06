@@ -8,24 +8,39 @@
   .wrap{max-width:1100px;margin:0 auto;padding:48px 24px}
   a.back{color:var(--acc);text-decoration:none;font-size:14px} a.back:hover{text-decoration:underline}
   h1{font-size:28px;margin:10px 0 6px} .sub{color:var(--mut);margin:0 0 32px}
+  .group{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin:36px 0 14px}
   .shot{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:28px}
   .shot h2{font-size:16px;margin:0;padding:14px 18px;border-bottom:1px solid var(--bd)}
   .shot h2 small{color:var(--mut);font-weight:400;margin-left:8px}
+  .shot h2 .new{display:inline-block;font-size:11px;font-weight:600;color:#3fb950;border:1px solid #2ea04366;border-radius:10px;padding:0 8px;margin-left:8px;vertical-align:2px}
   .shot img{display:block;width:100%;height:auto}
 </style></head><body><div class="wrap">
 <a class="back" href="../../index.html">← 포트폴리오 홈</a>
 <h1>실제 앱 화면</h1>
-<p class="sub">로컬 풀스택(Spring Boot API·Kafka consumer·React 프런트) 기동 후 Playwright로 캡처 · 모의(MOCK) 투자 모드 · 실데이터 기반</p>
+<p class="sub">로컬 풀스택(Spring Boot API·Kafka consumer·React 프런트) 기동 후 Playwright로 캡처 · 모의(MOCK) 투자 모드 · 실데이터 기반 · 2026-06-06 갱신</p>
 
-<div class="shot"><h2>종목 상세 <small>실시간 시세 · TradingView 캔들차트 · FVG/OrderBlock 오버레이 · 주문 패널</small></h2><img src="symbol-detail-samsung.png" alt="종목 상세"></div>
+<div class="shot"><h2>종목 상세 <small>실시간 시세 · TradingView 캔들차트 · FVG/OrderBlock 오버레이 · AI 종목 분석 · 주문 패널</small></h2><img src="symbol-detail-samsung.png" alt="종목 상세"></div>
 <div class="shot"><h2>대시보드 <small>시장지수 · 계좌요약 · 보유종목 · 잔고 (KIS 실시간 push)</small></h2><img src="dashboard.png" alt="대시보드"></div>
-<div class="shot"><h2>관심종목 <small>Watchlist 실시간 시세</small></h2><img src="watchlist.png" alt="관심종목"></div>
+
+<p class="group">전략</p>
+<div class="shot"><h2>전략 리서치<span class="new">NEW</span> <small>AI 종목발굴 (claude-cli-bridge) · 후보 카드 · 시장 국면 리포트 · 후보 전략 백테스트</small></h2><img src="strategy-research.png" alt="전략 리서치"></div>
 <div class="shot"><h2>전략 빌더 <small>차트 조건식 DSL 작성</small></h2><img src="strategy-builder.png" alt="전략 빌더"></div>
-<div class="shot"><h2>백테스트 <small>저장 전략 과거 데이터 시뮬레이션</small></h2><img src="backtest.png" alt="백테스트"></div>
 <div class="shot"><h2>전략 목록 <small>저장된 전략 관리</small></h2><img src="strategy-list.png" alt="전략 목록"></div>
-<div class="shot"><h2>성과 대시보드 <small>수익률 · 성과 지표</small></h2><img src="performance.png" alt="성과 대시보드"></div>
-<div class="shot"><h2>시장 동향 <small>섹터/지수 트렌드</small></h2><img src="market-trend.png" alt="시장 동향"></div>
+<div class="shot"><h2>백테스트 <small>저장 전략 과거 데이터 시뮬레이션</small></h2><img src="backtest.png" alt="백테스트"></div>
+<div class="shot"><h2>시나리오 리플레이<span class="new">NEW</span> <small>전략 신호·리스크·가상 주문 타임라인 재생 (KIS 주문 미발행)</small></h2><img src="scenario-replay.png" alt="시나리오 리플레이"></div>
+
+<p class="group">시장</p>
+<div class="shot"><h2>종목검색 <small>전체 3,575종목 유니버스 · 섹터/시장 필터 · 관심종목 통합</small></h2><img src="instruments.png" alt="종목검색"></div>
+<div class="shot"><h2>시장 추세 <small>섹터/지수 트렌드</small></h2><img src="market-trend.png" alt="시장 추세"></div>
+<div class="shot"><h2>시장 캘린더<span class="new">NEW</span> <small>KRX 영업일 · 시장 이벤트 · 일정 등록</small></h2><img src="market-calendar.png" alt="시장 캘린더"></div>
 <div class="shot"><h2>포지션 <small>보유 포지션</small></h2><img src="positions.png" alt="포지션"></div>
-<div class="shot"><h2>주문 <small>주문 내역</small></h2><img src="orders.png" alt="주문"></div>
+<div class="shot"><h2>주문 내역 <small>주문 이력 · 체결 상태</small></h2><img src="orders.png" alt="주문 내역"></div>
+
+<p class="group">리스크</p>
+<div class="shot"><h2>리스크 설정<span class="new">NEW</span> <small>포지션 한도 · 일일 손실 한도(DLL) · 동시 보유 종목 · 거래 빈도 — 자동매매 가드레일</small></h2><img src="risk-config.png" alt="리스크 설정"></div>
+<div class="shot"><h2>위반 이력<span class="new">NEW</span> <small>리스크 룰 위반 이벤트 기록 · 차단 사유 추적</small></h2><img src="risk-events.png" alt="위반 이력"></div>
+
+<p class="group">기록·성과</p>
+<div class="shot"><h2>성과 대시보드 <small>수익률 · 성과 지표</small></h2><img src="performance.png" alt="성과 대시보드"></div>
 <div class="shot"><h2>매매일지 <small>Trading journal</small></h2><img src="journal.png" alt="매매일지"></div>
 </div></body></html>
