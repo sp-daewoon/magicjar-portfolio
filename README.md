@@ -15,6 +15,14 @@
 |---|---|
 | ![종목 상세](showcase/screens/symbol-detail-samsung.png) | ![대시보드](showcase/screens/dashboard.png) |
 
+### 관측 (Observability)
+
+> Prometheus + Grafana 로컬 관측 스택. api·batch·consumer 3개 모듈을 Micrometer로 계측, 15s scrape.
+
+| JVM Baseline (Heap·CPU·HTTP·Threads) | KIS Rate Limit (버킷 토큰 소진·TPS 초과) |
+|---|---|
+| ![Grafana JVM](showcase/screens/grafana-jvm.png) | ![Grafana KIS Rate Limit](showcase/screens/grafana-kis-ratelimit.png) |
+
 ---
 
 ## 한눈에 보기
@@ -22,10 +30,11 @@
 | | |
 |---|---|
 | **기간** | 2026-04 ~ (약 6주 집중 개발) |
-| **규모** | 1,380+ 커밋 · 100+ PR · 40+ 릴리즈 · 190K+ LOC |
+| **규모** | 1,490+ 커밋 · 100+ PR · 44 릴리즈 · 190K+ LOC |
 | **백엔드** | Spring Boot 3.3 · Kotlin 2.0 (K2) · JDK 21 · Gradle KTS 멀티모듈(7) |
 | **프런트** | React 19 · TypeScript · Vite · Tailwind · TradingView Lightweight Charts v4 |
 | **데이터/인프라** | 한국투자증권(KIS) OpenAPI(REST+WebSocket) · Kafka · PostgreSQL · Redis · Docker Compose |
+| **관측/운영** | Prometheus + Grafana (JVM·HTTP·KIS Rate Limit·SLO 대시보드) · Micrometer `/actuator/prometheus` |
 | **AI** | Spring AI (Anthropic/OpenAI) — 사용자 트리거 분석 보조 (매매 결정권 0) |
 | **문서화** | ADR 100+ · baseline 기능정의서 12버전 · 자동 release notes 파이프라인 |
 
@@ -36,7 +45,7 @@
 - **데이터 계층** — KIS WebSocket 실시간 tick(체결/호가) + REST 일봉·분봉 적재, DART 공시·뉴스 수집. 권위는 WS tick, REST는 bootstrap/backfill/fallback.
 - **분석·전략 계층** — 기술적 지표 라이브러리 + 차트 조건식 DSL 파서 + StrategyEvaluator + 백테스트 엔진. FVG/Order Block 등 스마트머니 개념 포함.
 - **의사결정·실행 계층** — 시그널 dispatch + 주문 실행 + **전략별 분할매수/분할익절**(scale-in/partial-exit) 포지션 관리. **실계좌 이중 게이트**(`MODE=REAL` + `ALLOW_REAL=true`)로 안전장치.
-- **운영 계층** — Prometheus + Grafana SLO 대시보드, alert routing, DR drill 자동 재현.
+- **운영 계층** — Prometheus가 api·batch·consumer 3개 모듈의 `/actuator/prometheus`를 15s 주기로 scrape(7일 retention), Grafana가 JVM·HTTP·KIS Rate Limit·SLO 대시보드를 auto-provision. alert routing, DR drill 자동 재현.
 
 > AI는 **매매 결정권이 없습니다.** 룰/시그널이 본체이고, AI는 사용자가 명시적으로 트리거할 때 뉴스·공시 감성, 전략 설명 등 분석 코멘트만 제공합니다.
 
