@@ -28,20 +28,20 @@ ul.bare{list-style:none;padding:0}</style></head><body>
 <div class="subtitle">커밋 로그 기반 자동 재구성 (backfill) · magicJar 한국 주식 자동매매 시스템</div>
 
 <div class="grid">
-  <div class="card"><div class="n">27</div><div class="l">커밋</div></div>
+  <div class="card"><div class="n">34</div><div class="l">커밋</div></div>
   <div class="card"><div class="n">5</div><div class="l">활동 에이전트</div></div>
   <div class="card"><div class="n">0</div><div class="l">머지 PR</div></div>
-  <div class="card"><div class="n">93</div><div class="l">변경 파일</div></div>
-  <div class="card"><div class="n" style="color:var(--ok)">+7,168</div><div class="l">추가 라인</div></div>
-  <div class="card"><div class="n" style="color:var(--todo)">−297</div><div class="l">삭제 라인</div></div>
+  <div class="card"><div class="n">106</div><div class="l">변경 파일</div></div>
+  <div class="card"><div class="n" style="color:var(--ok)">+9,130</div><div class="l">추가 라인</div></div>
+  <div class="card"><div class="n" style="color:var(--todo)">−460</div><div class="l">삭제 라인</div></div>
 </div>
 
 <h2>👥 에이전트별 작업</h2>
 <table><thead><tr><th>에이전트</th><th>역할</th><th>커밋</th><th>대표 작업</th></tr></thead><tbody>
-<tr><td><code>market-data</code></td><td>시세 데이터</td><td>11</td><td>chore(market-data): task T-20260609-1407 done (PR #842)</td></tr>
+<tr><td><code>market-data</code></td><td>시세 데이터</td><td>16</td><td>hotfix(market-data): CandleBootstrapRunner 부팅 cold-start kill-switch (</td></tr>
 <tr><td><code>architect</code></td><td>수석 설계</td><td>6</td><td>chore(architect): task T-20260609-1111 done (PR #834)</td></tr>
+<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>5</td><td>docs(ops): 백업 가이드 — 전종목 일봉 마이그레이션 복구 기준점(2026-06-09.dump 171MB) 반영</td></tr>
 <tr><td><code>strategy</code></td><td>전략 엔진</td><td>5</td><td>chore(strategy): task T-20260609-1312 done (PR #841)</td></tr>
-<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>3</td><td>docs(ops): KIS REST 호출 cookbook + IntelliJ HTTP Client (시크릿 분리)</td></tr>
 <tr><td><code>frontend</code></td><td>프런트</td><td>2</td><td>chore(frontend): task T-20260609-1127 done (PR #836)</td></tr>
 </tbody></table>
 
@@ -50,12 +50,14 @@ ul.bare{list-style:none;padding:0}</style></head><body>
 <h2>🗄️ DB 스키마 (Flyway)</h2><p><code>V75__daytrade_discovery_setup_seed.sql</code></p>
 
 <h2>🧩 모듈별 변경 파일</h2>
-<p><span class="badge b-mute">_workspace · 53</span> <span class="badge b-mute">consumer · 40</span> <span class="badge b-mute">root · 16</span> <span class="badge b-mute">frontend · 7</span> <span class="badge b-mute">api · 7</span> <span class="badge b-mute">docs · 6</span> <span class="badge b-mute">domain · 4</span></p>
+<p><span class="badge b-mute">_workspace · 57</span> <span class="badge b-mute">consumer · 53</span> <span class="badge b-mute">root · 18</span> <span class="badge b-mute">api · 9</span> <span class="badge b-mute">docs · 8</span> <span class="badge b-mute">frontend · 7</span> <span class="badge b-mute">domain · 4</span></p>
 
 <h2>📝 주요 커밋 (변경량 상위)</h2>
 <ul class="bare">
 <li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): ADR 0118 R-BF — 10년 전종목 일봉 backfill 멱등 캠페인 <code>58223b0</code> <span style="color:var(--mute)">+1460/−12</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> docs(ops): 백그라운드 프로세스 전수 인벤토리 HTML (항목별 플로우 + 전종목 일봉 캠페인 + J-채널 fix 반영) <code>95dcd02</code> <span style="color:var(--mute)">+1122/−0</span></li>
 <li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): ADR 0117 R2 백엔드 — 장전 일봉 단타 발굴 endpoint + V75 시드 <code>eeb0794</code> <span style="color:var(--mute)">+913/−5</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> fix(market-data): 전종목 일봉 채널 J-단일 근본 fix + wipe→재적재 마이그레이션 모드 + 코루틴 동시성 <code>0a22b60</code> <span style="color:var(--mute)">+773/−134</span></li>
 <li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): ADR 0118 R1 멀티시세 어댑터 + MARKET_DAILY universe + NXT 실측 harness <code>7976518</code> <span style="color:var(--mute)">+896/−0</span></li>
 <li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): R2 단타 발굴 화면 — 전략 없이 오늘 단타 후보 TOP N <code>558d16e</code> <span style="color:var(--mute)">+851/−0</span></li>
 <li class="cmt"><span class="badge b-mute">market-data</span> fix(market-data): 당일 1d live candle Hash를 구독 수립 시점 공식 KIS 값으로 시드 <code>1ac9c07</code> <span style="color:var(--mute)">+577/−31</span></li>
@@ -68,8 +70,6 @@ ul.bare{list-style:none;padding:0}</style></head><body>
 <li class="cmt"><span class="badge b-mute">architect</span> docs(architect): ADR 0117 정정 — R2(장전 일봉 발굴) 우선 + 프리셋 권위 V75 Flyway 시드 <code>e412262</code> <span style="color:var(--mute)">+102/−69</span></li>
 <li class="cmt"><span class="badge b-mute">architect</span> docs(architect): ADR 0118 결재 완료 + 10년 이력 backfill/storage/rate-limit 재산정 <code>fc89963</code> <span style="color:var(--mute)">+110/−39</span></li>
 <li class="cmt"><span class="badge b-mute">orchestrator</span> chore(release): v3.12.1 README 매트릭스(45 tags) + master.html 갱신 <code>f0df035</code> <span style="color:var(--mute)">+62/−47</span></li>
-<li class="cmt"><span class="badge b-mute">market-data</span> hotfix(market-data): R-BF 백필 candle.source VARCHAR(20) overflow 수정 <code>89c8eef</code> <span style="color:var(--mute)">+91/−4</span></li>
-<li class="cmt"><span class="badge b-mute">market-data</span> chore(market-data): task T-20260609-1155 start (ADR 0118 R-BF) <code>fcc054b</code> <span style="color:var(--mute)">+32/−0</span></li>
 </ul>
 
 
