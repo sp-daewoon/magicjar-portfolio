@@ -1,0 +1,79 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>magicJar devlog · 2026-06-09 (화)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--brown:#5b3a1f;--cream:#fff8ed;--paper:#fafaf7;--line:#d8d4c8;--ok:#2f7a3a;--warn:#b58606;--pending:#1c5fa6;--todo:#b03060;--mute:#6a6a6a}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",sans-serif;background:var(--paper);color:#222;max-width:1080px;margin:0 auto;padding:36px 24px 80px;line-height:1.65}
+h1{color:var(--brown);border-bottom:2px solid var(--brown);padding-bottom:8px;margin-bottom:6px;font-size:1.55rem}
+.subtitle{color:var(--mute);font-size:.95rem;margin-bottom:24px}
+h2{color:var(--brown);margin-top:34px;border-left:4px solid var(--brown);padding-left:10px;font-size:1.15rem}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.88rem}
+th,td{padding:6px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--brown);font-weight:600}
+tr:nth-child(even) td{background:#fcfcf8}
+code{background:#f3efe6;padding:1px 6px;border-radius:3px;font-size:.85em;color:#333}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;margin:0 2px}
+.b-ok{background:#e3f1e6;color:var(--ok);border:1px solid var(--ok)}
+.b-pending{background:#e3edf7;color:var(--pending);border:1px solid var(--pending)}
+.b-todo{background:#fce6ec;color:var(--todo);border:1px solid var(--todo)}
+.b-mute{background:#f0f0f0;color:var(--mute);border:1px solid var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.card .n{font-size:1.5rem;font-weight:700;color:var(--brown)} .card .l{font-size:.82rem;color:var(--mute)}
+.nav-back{display:inline-block;margin-bottom:18px;color:var(--brown);text-decoration:none;font-size:.9rem}
+.nav-back:hover{text-decoration:underline}
+.cmt{font-size:.86rem;margin:3px 0;padding-left:4px}
+.cmt code{font-size:.8em}
+ul.bare{list-style:none;padding:0}</style></head><body>
+<a class="nav-back" href="index.html">← 개발일지 목록</a>
+<h1>2026-06-09 (화)</h1>
+<div class="subtitle">커밋 로그 기반 자동 재구성 (backfill) · magicJar 한국 주식 자동매매 시스템</div>
+
+<div class="grid">
+  <div class="card"><div class="n">27</div><div class="l">커밋</div></div>
+  <div class="card"><div class="n">5</div><div class="l">활동 에이전트</div></div>
+  <div class="card"><div class="n">0</div><div class="l">머지 PR</div></div>
+  <div class="card"><div class="n">93</div><div class="l">변경 파일</div></div>
+  <div class="card"><div class="n" style="color:var(--ok)">+7,168</div><div class="l">추가 라인</div></div>
+  <div class="card"><div class="n" style="color:var(--todo)">−297</div><div class="l">삭제 라인</div></div>
+</div>
+
+<h2>👥 에이전트별 작업</h2>
+<table><thead><tr><th>에이전트</th><th>역할</th><th>커밋</th><th>대표 작업</th></tr></thead><tbody>
+<tr><td><code>market-data</code></td><td>시세 데이터</td><td>11</td><td>chore(market-data): task T-20260609-1407 done (PR #842)</td></tr>
+<tr><td><code>architect</code></td><td>수석 설계</td><td>6</td><td>chore(architect): task T-20260609-1111 done (PR #834)</td></tr>
+<tr><td><code>strategy</code></td><td>전략 엔진</td><td>5</td><td>chore(strategy): task T-20260609-1312 done (PR #841)</td></tr>
+<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>3</td><td>docs(ops): KIS REST 호출 cookbook + IntelliJ HTTP Client (시크릿 분리)</td></tr>
+<tr><td><code>frontend</code></td><td>프런트</td><td>2</td><td>chore(frontend): task T-20260609-1127 done (PR #836)</td></tr>
+</tbody></table>
+
+<h2>📐 아키텍처 결정 (ADR)</h2><p><span class="badge b-pending">ADR 0115</span> <span class="badge b-pending">ADR 0116</span> <span class="badge b-pending">ADR 0117</span> <span class="badge b-pending">ADR 0118</span></p>
+
+<h2>🗄️ DB 스키마 (Flyway)</h2><p><code>V75__daytrade_discovery_setup_seed.sql</code></p>
+
+<h2>🧩 모듈별 변경 파일</h2>
+<p><span class="badge b-mute">_workspace · 53</span> <span class="badge b-mute">consumer · 40</span> <span class="badge b-mute">root · 16</span> <span class="badge b-mute">frontend · 7</span> <span class="badge b-mute">api · 7</span> <span class="badge b-mute">docs · 6</span> <span class="badge b-mute">domain · 4</span></p>
+
+<h2>📝 주요 커밋 (변경량 상위)</h2>
+<ul class="bare">
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): ADR 0118 R-BF — 10년 전종목 일봉 backfill 멱등 캠페인 <code>58223b0</code> <span style="color:var(--mute)">+1460/−12</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): ADR 0117 R2 백엔드 — 장전 일봉 단타 발굴 endpoint + V75 시드 <code>eeb0794</code> <span style="color:var(--mute)">+913/−5</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): ADR 0118 R1 멀티시세 어댑터 + MARKET_DAILY universe + NXT 실측 harness <code>7976518</code> <span style="color:var(--mute)">+896/−0</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): R2 단타 발굴 화면 — 전략 없이 오늘 단타 후보 TOP N <code>558d16e</code> <span style="color:var(--mute)">+851/−0</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> fix(market-data): 당일 1d live candle Hash를 구독 수립 시점 공식 KIS 값으로 시드 <code>1ac9c07</code> <span style="color:var(--mute)">+577/−31</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(architect): ADR 0117 + 단타 발굴(Discovery) 레이어 spec/plan + 데이터 계약 LOCK <code>45af00e</code> <span style="color:var(--mute)">+445/−1</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> hotfix(market-data): R-BF 완료판정 gap-aware 교체 + 무한 재fetch cooldown 가드 + audit entity_id overflow 정정 <code>08f26a5</code> <span style="color:var(--mute)">+408/−33</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> fix(strategy): strategy_position replay TOCTOU 직렬화(advisory lock) + 테스트 매트릭스 보강 <code>4fcc81b</code> <span style="color:var(--mute)">+350/−10</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> fix(strategy): WS_PREINSERT race 누락 strategy_position 체결 replay 복구 (baseline) <code>d373959</code> <span style="color:var(--mute)">+351/−2</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> docs(ops): KIS REST 호출 cookbook + IntelliJ HTTP Client (시크릿 분리) <code>947ac0b</code> <span style="color:var(--mute)">+243/−0</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(architect): ADR 0118 신설 — 전종목 일봉 universe(MARKET_DAILY) + 야간 멀티시세 snapshot + today 공식 보정 (Proposed) <code>20344a1</code> <span style="color:var(--mute)">+234/−2</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(architect): ADR 0117 정정 — R2(장전 일봉 발굴) 우선 + 프리셋 권위 V75 Flyway 시드 <code>e412262</code> <span style="color:var(--mute)">+102/−69</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(architect): ADR 0118 결재 완료 + 10년 이력 backfill/storage/rate-limit 재산정 <code>fc89963</code> <span style="color:var(--mute)">+110/−39</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> chore(release): v3.12.1 README 매트릭스(45 tags) + master.html 갱신 <code>f0df035</code> <span style="color:var(--mute)">+62/−47</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> hotfix(market-data): R-BF 백필 candle.source VARCHAR(20) overflow 수정 <code>89c8eef</code> <span style="color:var(--mute)">+91/−4</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> chore(market-data): task T-20260609-1155 start (ADR 0118 R-BF) <code>fcc054b</code> <span style="color:var(--mute)">+32/−0</span></li>
+</ul>
+
+
+
+<footer style="margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:#888;font-size:.82rem">
+자동 생성 · <code>scripts/gen-devlogs.mjs</code> · 비공개 레포 커밋 메타데이터 집계 (소스·시크릿 미포함)
+</footer></body></html>

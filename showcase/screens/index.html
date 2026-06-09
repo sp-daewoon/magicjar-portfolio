@@ -17,7 +17,7 @@
 </style></head><body><div class="wrap">
 <a class="back" href="../../index.html">← 포트폴리오 홈</a>
 <h1>실제 앱 화면</h1>
-<p class="sub">로컬 풀스택(Spring Boot API·Kafka consumer·React 프런트) 기동 후 Playwright로 캡처 · 모의(MOCK) 투자 모드 · 실데이터 기반 · v3.12.0 · 2026-06-08 갱신</p>
+<p class="sub">로컬 풀스택(Spring Boot API·Kafka consumer·React 프런트) 기동 후 Playwright로 캡처 · 모의(MOCK) 투자 모드 · 실데이터 기반 · v3.12.1 · 2026-06-09 갱신</p>
 
 <div class="shot"><h2>종목 상세 <small>실시간 시세 · TradingView 캔들차트 · FVG/OrderBlock 오버레이 · 호가창 뎁스 · AI 종목 분석 · AI 차트 해석 · 주문 패널</small></h2><img src="symbol-detail-samsung.png" alt="종목 상세"></div>
 <div class="shot"><h2>대시보드 <small>시장지수 · 계좌요약 · 보유종목 · 잔고 (KIS 실시간 push)</small></h2><img src="dashboard.png" alt="대시보드"></div>
@@ -46,5 +46,5 @@
 
 <p class="group">관측 (Observability)</p>
 <div class="shot"><h2>Grafana — JVM Baseline<span class="new">NEW</span> <small>Prometheus scrape · Heap · Process CPU · HTTP 요청률(by URI) · JVM Threads — api·batch·consumer 3모듈 계측</small></h2><img src="grafana-jvm.png" alt="Grafana JVM Baseline"></div>
-<div class="shot"><h2>Grafana — KIS Rate Limit<span class="new">NEW</span> <small>버킷별 토큰 소진율(bg/shared/user) · 누적 소진 · TPS 초과 직격 버스트(EGW00201) · Acquire Timeout</small></h2><img src="grafana-kis-ratelimit.png" alt="Grafana KIS Rate Limit"></div>
+<div class="shot"><h2>Grafana — KIS Rate Limit<span class="new">NEW</span> <small>priority 3-tier 버킷 소진율(bg/shared/user) · 누적 소진 · TPS 초과 버스트(EGW00201) · priority별 Acquire Timeout · tr_id별 호출률 (ADR 0116 Phase 2)</small></h2><img src="grafana-kis-ratelimit.png" alt="Grafana KIS Rate Limit"></div>
 </div></body></html>
