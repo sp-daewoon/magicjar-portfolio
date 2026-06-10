@@ -1,0 +1,81 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>magicJar devlog · 2026-06-10 (수)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--brown:#5b3a1f;--cream:#fff8ed;--paper:#fafaf7;--line:#d8d4c8;--ok:#2f7a3a;--warn:#b58606;--pending:#1c5fa6;--todo:#b03060;--mute:#6a6a6a}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",sans-serif;background:var(--paper);color:#222;max-width:1080px;margin:0 auto;padding:36px 24px 80px;line-height:1.65}
+h1{color:var(--brown);border-bottom:2px solid var(--brown);padding-bottom:8px;margin-bottom:6px;font-size:1.55rem}
+.subtitle{color:var(--mute);font-size:.95rem;margin-bottom:24px}
+h2{color:var(--brown);margin-top:34px;border-left:4px solid var(--brown);padding-left:10px;font-size:1.15rem}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.88rem}
+th,td{padding:6px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--brown);font-weight:600}
+tr:nth-child(even) td{background:#fcfcf8}
+code{background:#f3efe6;padding:1px 6px;border-radius:3px;font-size:.85em;color:#333}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;margin:0 2px}
+.b-ok{background:#e3f1e6;color:var(--ok);border:1px solid var(--ok)}
+.b-pending{background:#e3edf7;color:var(--pending);border:1px solid var(--pending)}
+.b-todo{background:#fce6ec;color:var(--todo);border:1px solid var(--todo)}
+.b-mute{background:#f0f0f0;color:var(--mute);border:1px solid var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.card .n{font-size:1.5rem;font-weight:700;color:var(--brown)} .card .l{font-size:.82rem;color:var(--mute)}
+.nav-back{display:inline-block;margin-bottom:18px;color:var(--brown);text-decoration:none;font-size:.9rem}
+.nav-back:hover{text-decoration:underline}
+.cmt{font-size:.86rem;margin:3px 0;padding-left:4px}
+.cmt code{font-size:.8em}
+ul.bare{list-style:none;padding:0}</style></head><body>
+<a class="nav-back" href="index.html">← 개발일지 목록</a>
+<h1>2026-06-10 (수)</h1>
+<div class="subtitle">커밋 로그 기반 자동 재구성 (backfill) · magicJar 한국 주식 자동매매 시스템</div>
+
+<div class="grid">
+  <div class="card"><div class="n">99</div><div class="l">커밋</div></div>
+  <div class="card"><div class="n">7</div><div class="l">활동 에이전트</div></div>
+  <div class="card"><div class="n">5</div><div class="l">머지 PR</div></div>
+  <div class="card"><div class="n">304</div><div class="l">변경 파일</div></div>
+  <div class="card"><div class="n" style="color:var(--ok)">+20,618</div><div class="l">추가 라인</div></div>
+  <div class="card"><div class="n" style="color:var(--todo)">−1,422</div><div class="l">삭제 라인</div></div>
+</div>
+
+<h2>👥 에이전트별 작업</h2>
+<table><thead><tr><th>에이전트</th><th>역할</th><th>커밋</th><th>대표 작업</th></tr></thead><tbody>
+<tr><td><code>strategy</code></td><td>전략 엔진</td><td>29</td><td>test(strategy-engine): ADR 0122 R3 — 페이퍼 자본 경로 e2e 시나리오 일괄 (consumer t</td></tr>
+<tr><td><code>backend-core</code></td><td>백엔드 코어</td><td>16</td><td>chore(backend-core): task T-20260610-1812 done (PR #908)</td></tr>
+<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>16</td><td>hotfix(reconcile): manual 경로 strategy_position 워커 배선 누락 fix (ADR 0115 </td></tr>
+<tr><td><code>architect</code></td><td>수석 설계</td><td>11</td><td>chore(architect): task T-20260610-1547 done (PR #897)</td></tr>
+<tr><td><code>market-data</code></td><td>시세 데이터</td><td>11</td><td>hotfix(market-data): KIS WS 체결통보(H0STCNI9 MOCK) 6/8 회귀 fix — WS endpoi</td></tr>
+<tr><td><code>frontend</code></td><td>프런트</td><td>10</td><td>chore(frontend): task T-20260610-1837 done (PR #910)</td></tr>
+<tr><td><code>qa</code></td><td>품질</td><td>6</td><td>chore(qa): task T-20260610-1754 done (PR #907)</td></tr>
+</tbody></table>
+
+<h2>📐 아키텍처 결정 (ADR)</h2><p><span class="badge b-pending">ADR 0056</span> <span class="badge b-pending">ADR 0095</span> <span class="badge b-pending">ADR 0115</span> <span class="badge b-pending">ADR 0118</span> <span class="badge b-pending">ADR 0119</span> <span class="badge b-pending">ADR 0120</span> <span class="badge b-pending">ADR 0121</span> <span class="badge b-pending">ADR 0122</span></p>
+
+<h2>🗄️ DB 스키마 (Flyway)</h2><p><code>V76__daytrade_preset_validation_promote.sql</code> · <code>V77__daytrade_gap_and_go_deactivate.sql</code> · <code>V77__discovery_scorecard.sql</code> · <code>V78__daytrade_preset_v78_sizing_revalidation.sql</code> · <code>V79__system_config_slack_webhook_order.sql</code> · <code>V80__order_request_order_trigger.sql</code> · <code>V81__strategy_origin.sql</code></p>
+
+<h2>🧩 모듈별 변경 파일</h2>
+<p><span class="badge b-mute">_workspace · 148</span> <span class="badge b-mute">consumer · 99</span> <span class="badge b-mute">api · 76</span> <span class="badge b-mute">root · 45</span> <span class="badge b-mute">frontend · 37</span> <span class="badge b-mute">domain · 18</span> <span class="badge b-mute">strategy-engine · 8</span> <span class="badge b-mute">scripts · 4</span> <span class="badge b-mute">docs · 3</span> <span class="badge b-mute">{api · 3</span> <span class="badge b-mute">batch · 2</span> <span class="badge b-mute">persistence-shared · 2</span> <span class="badge b-mute">indicator-impl · 2</span></p>
+
+<h2>📝 주요 커밋 (변경량 상위)</h2>
+<ul class="bare">
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): 1wk/1mo/1y를 1d 합산으로 전환 — 기준봉/파생봉 통일 모델 (년봉 회귀 fix · ADR 0120) <code>d908ffc</code> <span style="color:var(--mute)">+1335/−2</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): ADR 0117 R3-검증 — 백테스트 과최적화 탐지 (IS/OOS + 민감도) <code>32bcc8a</code> <span style="color:var(--mute)">+1225/−1</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): ADR 0115 §2-B 불변식 #4 — orderTrigger 키 사슬 추적 화면 <code>cd5a7c8</code> <span style="color:var(--mute)">+1202/−6</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): ADR 0122 R3 — 페이퍼 승급 UI + 페이퍼 대시보드 + 모의 배지 UX <code>3208d15</code> <span style="color:var(--mute)">+1112/−10</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): 발굴 스코어카드 — 매일 발굴 기록 + 다음날 자동 채점 <code>d6ba714</code> <span style="color:var(--mute)">+1122/−0</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(backend-core): strategy_position 부족 방향 드리프트 귀속 자동보정 가동 (ADR 0115 §P1-1 amend) <code>9b4e3d6</code> <span style="color:var(--mute)">+1071/−32</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(backend-core): ADR 0122 R2 — 발굴→MOCK 페이퍼 어댑터+영속 (REST·RiskConfig·가상자본·WS) <code>ae253a7</code> <span style="color:var(--mute)">+1076/−13</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(backend-core): ADR 0115 §2-P2 R1 — consumer 체결-원장 정합 배선 <code>c6e30a3</code> <span style="color:var(--mute)">+784/−14</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 종목 상세 차트 재수집 모달 재설계(체크박스 2그룹) + 진입 봉수 마지막값 기억 (ADR 0120 §6) <code>45adabf</code> <span style="color:var(--mute)">+692/−80</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): ADR 0119 — 1분봉 proactive cold-start 백필 폐지 → on-demand 전환 <code>129e545</code> <span style="color:var(--mute)">+293/−462</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> perf(market-data): 1d→1wk/1mo/1y 롤업 성능·무지성 재생성 최적화 (ADR 0120 amend §9) <code>68d8194</code> <span style="color:var(--mute)">+634/−94</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): 전략 원장 rebuild 순수 함수 + 부족 방향 evidence 완화 (spec §3-3 대안 B-on-A) <code>9006276</code> <span style="color:var(--mute)">+712/−5</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(backend-core): ADR 0115 §2-P2 R2 — OrderTrigger 키 사슬 정비 + Flyway V80 <code>75ab827</code> <span style="color:var(--mute)">+588/−29</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(backend-core): KIS rate limit 알람 차등화 + 주문 체결 Slack 추가 채널 이중 송출 <code>41b010d</code> <span style="color:var(--mute)">+463/−66</span></li>
+<li class="cmt"><span class="badge b-mute">qa</span> test(qa): ADR 0115 §2-B-2 불변식 #5 — 원장 키 사슬 회귀 시나리오 LOCK <code>8073871</code> <span style="color:var(--mute)">+504/−3</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> test(strategy-engine): ADR 0122 R3 — 페이퍼 자본 경로 e2e 시나리오 일괄 (consumer test) <code>0161361</code> <span style="color:var(--mute)">+453/−0</span></li>
+</ul>
+
+<h2>🔀 머지된 PR (5)</h2><p><span class="badge b-ok">#856</span> <span class="badge b-ok">#857</span> <span class="badge b-ok">#862</span> <span class="badge b-ok">#868</span> <span class="badge b-ok">#870</span></p>
+
+<footer style="margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:#888;font-size:.82rem">
+자동 생성 · <code>scripts/gen-devlogs.mjs</code> · 비공개 레포 커밋 메타데이터 집계 (소스·시크릿 미포함)
+</footer></body></html>
