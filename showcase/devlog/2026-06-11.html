@@ -1,0 +1,79 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>magicJar devlog · 2026-06-11 (목)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--brown:#5b3a1f;--cream:#fff8ed;--paper:#fafaf7;--line:#d8d4c8;--ok:#2f7a3a;--warn:#b58606;--pending:#1c5fa6;--todo:#b03060;--mute:#6a6a6a}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",sans-serif;background:var(--paper);color:#222;max-width:1080px;margin:0 auto;padding:36px 24px 80px;line-height:1.65}
+h1{color:var(--brown);border-bottom:2px solid var(--brown);padding-bottom:8px;margin-bottom:6px;font-size:1.55rem}
+.subtitle{color:var(--mute);font-size:.95rem;margin-bottom:24px}
+h2{color:var(--brown);margin-top:34px;border-left:4px solid var(--brown);padding-left:10px;font-size:1.15rem}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.88rem}
+th,td{padding:6px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--brown);font-weight:600}
+tr:nth-child(even) td{background:#fcfcf8}
+code{background:#f3efe6;padding:1px 6px;border-radius:3px;font-size:.85em;color:#333}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;margin:0 2px}
+.b-ok{background:#e3f1e6;color:var(--ok);border:1px solid var(--ok)}
+.b-pending{background:#e3edf7;color:var(--pending);border:1px solid var(--pending)}
+.b-todo{background:#fce6ec;color:var(--todo);border:1px solid var(--todo)}
+.b-mute{background:#f0f0f0;color:var(--mute);border:1px solid var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.card .n{font-size:1.5rem;font-weight:700;color:var(--brown)} .card .l{font-size:.82rem;color:var(--mute)}
+.nav-back{display:inline-block;margin-bottom:18px;color:var(--brown);text-decoration:none;font-size:.9rem}
+.nav-back:hover{text-decoration:underline}
+.cmt{font-size:.86rem;margin:3px 0;padding-left:4px}
+.cmt code{font-size:.8em}
+ul.bare{list-style:none;padding:0}</style></head><body>
+<a class="nav-back" href="index.html">← 개발일지 목록</a>
+<h1>2026-06-11 (목)</h1>
+<div class="subtitle">커밋 로그 기반 자동 재구성 (backfill) · magicJar 한국 주식 자동매매 시스템</div>
+
+<div class="grid">
+  <div class="card"><div class="n">36</div><div class="l">커밋</div></div>
+  <div class="card"><div class="n">5</div><div class="l">활동 에이전트</div></div>
+  <div class="card"><div class="n">0</div><div class="l">머지 PR</div></div>
+  <div class="card"><div class="n">174</div><div class="l">변경 파일</div></div>
+  <div class="card"><div class="n" style="color:var(--ok)">+6,440</div><div class="l">추가 라인</div></div>
+  <div class="card"><div class="n" style="color:var(--todo)">−334</div><div class="l">삭제 라인</div></div>
+</div>
+
+<h2>👥 에이전트별 작업</h2>
+<table><thead><tr><th>에이전트</th><th>역할</th><th>커밋</th><th>대표 작업</th></tr></thead><tbody>
+<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>20</td><td>chore(orchestrator): task T-20260611-1103 archive (헌법 §2)</td></tr>
+<tr><td><code>market-data</code></td><td>시세 데이터</td><td>8</td><td>chore(market-data): task done — ADR 0123 R1 PR #922</td></tr>
+<tr><td><code>backend-core</code></td><td>백엔드 코어</td><td>5</td><td>chore(backend-core): task T-20260611-1437 done (PR #923)</td></tr>
+<tr><td><code>architect</code></td><td>수석 설계</td><td>2</td><td>spec(architect): KIS WS 구독 슬롯 회계 + owner eviction + 채널 다이어트 (ADR 0123 </td></tr>
+<tr><td><code>frontend</code></td><td>프런트</td><td>1</td><td>feat(frontend): 전략 검증 퍼널 UX 보강 — 화면 도선 단절 6건 수선</td></tr>
+</tbody></table>
+
+<h2>📐 아키텍처 결정 (ADR)</h2><p><span class="badge b-pending">ADR 0122</span> <span class="badge b-pending">ADR 0123</span></p>
+
+<h2>🗄️ DB 스키마 (Flyway)</h2><p><code>V82__ai_chart_prompt_context_enrichment.sql</code></p>
+
+<h2>🧩 모듈별 변경 파일</h2>
+<p><span class="badge b-mute">_workspace · 76</span> <span class="badge b-mute">frontend · 56</span> <span class="badge b-mute">consumer · 43</span> <span class="badge b-mute">api · 10</span> <span class="badge b-mute">root · 9</span> <span class="badge b-mute">domain · 8</span> <span class="badge b-mute">docs · 4</span></p>
+
+<h2>📝 주요 커밋 (변경량 상위)</h2>
+<ul class="bare">
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 전략 검증 퍼널 UX 보강 — 화면 도선 단절 6건 수선 <code>469f958</code> <span style="color:var(--mute)">+797/−31</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): ADR 0123 R1 — KIS WS 슬롯 단일 회계기 + OPSP0008 거부 감지 + graceful fallback <code>efda205</code> <span style="color:var(--mute)">+788/−19</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> chore(orchestrator): 헌법 §2 사이클 정리 — DONE task 45건 archive + 페이퍼 R1/R3 행정 마감 + 퍼널 검증 리포트 <code>2fbbed9</code> <span style="color:var(--mute)">+617/−61</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> feat(frontend): explain daytrade discovery signals <code>8636c92</code> <span style="color:var(--mute)">+531/−8</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> feat(ai): enrich chart prompts from candle data <code>b5a29a7</code> <span style="color:var(--mute)">+518/−5</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> fix(market-data): 1wk/1mo/1y 롤업 고아 진행봉 앵커 정리 — ADR 0120 amend <code>ea20d09</code> <span style="color:var(--mute)">+462/−1</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> The One Above All <code>af9e1a1</code> <span style="color:var(--mute)">+425/−35</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> spec(architect): KIS WS 구독 슬롯 회계 + owner eviction + 채널 다이어트 (ADR 0123 Proposed, ADR 0048 amend) <code>e76c05a</code> <span style="color:var(--mute)">+436/−6</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> fix(backend-core): ADR 0122 §6 GAP-0 hotfix — TradingModeGate paper origin 인지 (REAL 전환 전 필수) <code>b03b3f6</code> <span style="color:var(--mute)">+284/−9</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> hotfix(backend-core): 체결-원장 귀속 source 차원 정합 + OrderTrigger 키 영속 회귀 (D1·D2) <code>1ef03ed</code> <span style="color:var(--mute)">+260/−21</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> The One Above All <code>ba64642</code> <span style="color:var(--mute)">+216/−60</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> hotfix(backend-core): consumer RealTradingConsentPort 배선 — REAL canary 게이트 차단 결함 <code>a3f3d82</code> <span style="color:var(--mute)">+253/−0</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> fix(market-data): WatchlistPollingWorker 개장 전 today stub 일봉 적재 가드 <code>504fbfa</code> <span style="color:var(--mute)">+218/−7</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> fix(market-data): seedTodayCandle 새벽 유령 일봉 근본 fix — KIS 영업일자 정합 가드 <code>c8bd43c</code> <span style="color:var(--mute)">+219/−0</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> fix(frontend): align builder DSL with prev_close <code>0ecea6c</code> <span style="color:var(--mute)">+104/−18</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> fix: guard pre-open daily candle seed <code>e553234</code> <span style="color:var(--mute)">+110/−1</span></li>
+</ul>
+
+
+
+<footer style="margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:#888;font-size:.82rem">
+자동 생성 · <code>scripts/gen-devlogs.mjs</code> · 비공개 레포 커밋 메타데이터 집계 (소스·시크릿 미포함)
+</footer></body></html>
