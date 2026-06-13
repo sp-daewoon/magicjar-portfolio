@@ -1,0 +1,79 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>magicJar devlog · 2026-06-12 (금)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--brown:#5b3a1f;--cream:#fff8ed;--paper:#fafaf7;--line:#d8d4c8;--ok:#2f7a3a;--warn:#b58606;--pending:#1c5fa6;--todo:#b03060;--mute:#6a6a6a}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",sans-serif;background:var(--paper);color:#222;max-width:1080px;margin:0 auto;padding:36px 24px 80px;line-height:1.65}
+h1{color:var(--brown);border-bottom:2px solid var(--brown);padding-bottom:8px;margin-bottom:6px;font-size:1.55rem}
+.subtitle{color:var(--mute);font-size:.95rem;margin-bottom:24px}
+h2{color:var(--brown);margin-top:34px;border-left:4px solid var(--brown);padding-left:10px;font-size:1.15rem}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.88rem}
+th,td{padding:6px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--brown);font-weight:600}
+tr:nth-child(even) td{background:#fcfcf8}
+code{background:#f3efe6;padding:1px 6px;border-radius:3px;font-size:.85em;color:#333}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;margin:0 2px}
+.b-ok{background:#e3f1e6;color:var(--ok);border:1px solid var(--ok)}
+.b-pending{background:#e3edf7;color:var(--pending);border:1px solid var(--pending)}
+.b-todo{background:#fce6ec;color:var(--todo);border:1px solid var(--todo)}
+.b-mute{background:#f0f0f0;color:var(--mute);border:1px solid var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.card .n{font-size:1.5rem;font-weight:700;color:var(--brown)} .card .l{font-size:.82rem;color:var(--mute)}
+.nav-back{display:inline-block;margin-bottom:18px;color:var(--brown);text-decoration:none;font-size:.9rem}
+.nav-back:hover{text-decoration:underline}
+.cmt{font-size:.86rem;margin:3px 0;padding-left:4px}
+.cmt code{font-size:.8em}
+ul.bare{list-style:none;padding:0}</style></head><body>
+<a class="nav-back" href="index.html">← 개발일지 목록</a>
+<h1>2026-06-12 (금)</h1>
+<div class="subtitle">커밋 로그 기반 자동 재구성 (backfill) · magicJar 한국 주식 자동매매 시스템</div>
+
+<div class="grid">
+  <div class="card"><div class="n">49</div><div class="l">커밋</div></div>
+  <div class="card"><div class="n">5</div><div class="l">활동 에이전트</div></div>
+  <div class="card"><div class="n">0</div><div class="l">머지 PR</div></div>
+  <div class="card"><div class="n">164</div><div class="l">변경 파일</div></div>
+  <div class="card"><div class="n" style="color:var(--ok)">+16,525</div><div class="l">추가 라인</div></div>
+  <div class="card"><div class="n" style="color:var(--todo)">−1,463</div><div class="l">삭제 라인</div></div>
+</div>
+
+<h2>👥 에이전트별 작업</h2>
+<table><thead><tr><th>에이전트</th><th>역할</th><th>커밋</th><th>대표 작업</th></tr></thead><tbody>
+<tr><td><code>backend-core</code></td><td>백엔드 코어</td><td>15</td><td>chore(backend-core): task T-20260612-1507 done (PR #936)</td></tr>
+<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>13</td><td>docs(kis): add v3.13.1 flow comparison html</td></tr>
+<tr><td><code>market-data</code></td><td>시세 데이터</td><td>11</td><td>chore(market-data): task T-20260612-1803 done (PR #944)</td></tr>
+<tr><td><code>frontend</code></td><td>프런트</td><td>7</td><td>chore(frontend): task T-20260612-1801 done (PR #943)</td></tr>
+<tr><td><code>architect</code></td><td>수석 설계</td><td>3</td><td>chore(architect): task T-20260612-1353 done (PR #929)</td></tr>
+</tbody></table>
+
+<h2>📐 아키텍처 결정 (ADR)</h2><p><span class="badge b-pending">ADR 0109</span></p>
+
+
+
+<h2>🧩 모듈별 변경 파일</h2>
+<p><span class="badge b-mute">consumer · 84</span> <span class="badge b-mute">_workspace · 61</span> <span class="badge b-mute">frontend · 39</span> <span class="badge b-mute">root · 27</span> <span class="badge b-mute">docs · 17</span> <span class="badge b-mute">api · 14</span> <span class="badge b-mute">domain · 10</span> <span class="badge b-mute">.claude · 1</span> <span class="badge b-mute">scripts · 1</span></p>
+
+<h2>📝 주요 커밋 (변경량 상위)</h2>
+<ul class="bare">
+<li class="cmt"><span class="badge b-mute">orchestrator</span> chore(release): cut v3.13.0 baseline <code>b725ace</code> <span style="color:var(--mute)">+5051/−86</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> hotfix(backend-core): canary D2 결함 배치 A 5건 — 만료동기화·카운터·윈도·fallback·평가순서 <code>8644f10</code> <span style="color:var(--mute)">+1106/−23</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): 실시간 구독 상태 관리자 API — GET /api/admin/realtime-status + consumer Redis 스냅샷 발행 <code>019bf67</code> <span style="color:var(--mute)">+1090/−1</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> Fix position sync and restore lint gate <code>670011c</code> <span style="color:var(--mute)">+900/−177</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 실시간 구독 상태 관리자 화면 /admin/realtime 신설 <code>cfc115e</code> <span style="color:var(--mute)">+1012/−0</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> feat(kis): add account availability snapshot guard <code>739b420</code> <span style="color:var(--mute)">+963/−28</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> hotfix(backend-core): 잔고(capital) 조회 실패 처리 전면 정정 — 0원 fabricate 폐기·재시도·stale-cache·skip (F10) <code>b6dd96e</code> <span style="color:var(--mute)">+645/−138</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> hotfix(backend-core): 익절 실행을 SELL 시그널 의존→tick 감시로 격상 (canary D2 batch B) <code>a2465d4</code> <span style="color:var(--mute)">+669/−2</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 시스템 이벤트 Detail hover 툴팁 + 클릭 상세 모달(복사) <code>2d74c1d</code> <span style="color:var(--mute)">+665/−5</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> hotfix(market-data): 전략 ACTIVE 시 호가(H0STASP0) 구독 자동 시작 + REST fallback 자격증명 resolve (F11) <code>2f1bcf0</code> <span style="color:var(--mute)">+451/−58</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> feat(kis): add realized profit adapter <code>3f226e3</code> <span style="color:var(--mute)">+436/−5</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 종목 상세 호가창 복원 — "표시 중에만" 구독, 이탈 즉시 해제 <code>f625a7d</code> <span style="color:var(--mute)">+396/−32</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> refactor(market-data): 종목 상세(DETAIL) 호가 구독 경로 제거 — 호가는 전략 ACTIVE 전용 <code>75851d6</code> <span style="color:var(--mute)">+97/−316</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): 종목 상세 호가 구독 "표시 중에만" 방식으로 복원 — 진입 구독·이탈 즉시 해제 + 15분 idle 안전망 <code>f4c099a</code> <span style="color:var(--mute)">+328/−79</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> refactor(frontend): 종목 상세 호가창(orderbook) UI·STOMP 구독·REST alias 제거 <code>d1bd40f</code> <span style="color:var(--mute)">+63/−328</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> docs(kis): add v3.13.1 flow comparison html <code>330fdf6</code> <span style="color:var(--mute)">+366/−2</span></li>
+</ul>
+
+
+
+<footer style="margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:#888;font-size:.82rem">
+자동 생성 · <code>scripts/gen-devlogs.mjs</code> · 비공개 레포 커밋 메타데이터 집계 (소스·시크릿 미포함)
+</footer></body></html>
