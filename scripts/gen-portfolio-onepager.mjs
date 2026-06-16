@@ -9,7 +9,7 @@ import QRCode from 'qrcode';
 const OUT_DIR = process.env.OUT_DIR || 'docs/portfolio';
 const BASE = 'magicjar-portfolio-link';
 const SITE = 'https://sp-daewoon.github.io/magicjar-portfolio/';
-const EMAIL = 'seonjupark94@gmail.com';
+const EMAIL = 'spong0095@gmail.com';
 const htmlPath = resolve(join(OUT_DIR, `${BASE}.html`));
 const pdfPath = resolve(join(OUT_DIR, `${BASE}.pdf`));
 const pngPath = resolve(join(OUT_DIR, `${BASE}-preview.png`));
@@ -25,7 +25,7 @@ const css = `
 html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 body{font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",-apple-system,system-ui,sans-serif;
   color:#1a1d24;letter-spacing:-0.01em;width:210mm;height:297mm;padding:24mm 22mm;
-  display:flex;flex-direction:column}
+  display:flex;flex-direction:column;word-break:keep-all;line-break:strict;overflow-wrap:break-word}
 .brand{font-size:13pt;font-weight:800;color:#2f6df0;letter-spacing:.02em}
 h1{font-size:30pt;font-weight:800;margin:.15em 0 .1em;letter-spacing:-0.03em;line-height:1.15}
 .sub{font-size:12pt;color:#0f1320;font-weight:600}
@@ -64,9 +64,11 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8">
 
   <hr>
   <p class="lead">한국투자증권(KIS) OpenAPI로 <b>실시간 시세·호가·체결을 수집</b>하고, 사용자가 정의한
-    <b>기술적 지표·차트 조건식(DSL)으로 전략을 표현</b>, 과거 데이터로 백테스트한 뒤
-    <b>시그널 → 주문 실행 → 포지션·리스크 관리</b>까지 이어지는 엔드투엔드 파이프라인입니다.
-    핵심 원칙은 <b>"룰이 본체, AI는 보조"</b> — 매매 결정권은 규칙에 있고, 실계좌 주문은
+    <b>기술적 지표·차트 조건식(DSL)</b>으로 전략을 표현한 뒤, 과거 데이터로 백테스트하고
+    <b>시그널 생성 → 주문 실행 → 포지션·리스크 관리</b>까지 이어지는 엔드투엔드 파이프라인입니다.</p>
+  <p class="lead">특히 전 종목 실시간 tick을 <b>Kafka 스트림</b>으로 흘려보내고
+    <b>Redis 분산 rate limiter·정합 워커</b>로 조율하는 <b>대규모 분산·동시성 처리</b>에 특화되어 있습니다.
+    핵심 원칙은 <b>“룰이 본체, AI는 보조”</b> — 매매 결정권은 규칙에 있고, 실계좌 주문은
     이중 게이트(<code>MODE=REAL</code> + <code>ALLOW_REAL=true</code>)로 코드 구조상 차단됩니다.</p>
 
   <div class="stats">
