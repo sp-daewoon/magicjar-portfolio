@@ -1,0 +1,81 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>magicJar devlog · 2026-06-16 (화)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--brown:#5b3a1f;--cream:#fff8ed;--paper:#fafaf7;--line:#d8d4c8;--ok:#2f7a3a;--warn:#b58606;--pending:#1c5fa6;--todo:#b03060;--mute:#6a6a6a}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Pretendard","Apple SD Gothic Neo",sans-serif;background:var(--paper);color:#222;max-width:1080px;margin:0 auto;padding:36px 24px 80px;line-height:1.65}
+h1{color:var(--brown);border-bottom:2px solid var(--brown);padding-bottom:8px;margin-bottom:6px;font-size:1.55rem}
+.subtitle{color:var(--mute);font-size:.95rem;margin-bottom:24px}
+h2{color:var(--brown);margin-top:34px;border-left:4px solid var(--brown);padding-left:10px;font-size:1.15rem}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.88rem}
+th,td{padding:6px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--brown);font-weight:600}
+tr:nth-child(even) td{background:#fcfcf8}
+code{background:#f3efe6;padding:1px 6px;border-radius:3px;font-size:.85em;color:#333}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;margin:0 2px}
+.b-ok{background:#e3f1e6;color:var(--ok);border:1px solid var(--ok)}
+.b-pending{background:#e3edf7;color:var(--pending);border:1px solid var(--pending)}
+.b-todo{background:#fce6ec;color:var(--todo);border:1px solid var(--todo)}
+.b-mute{background:#f0f0f0;color:var(--mute);border:1px solid var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.card .n{font-size:1.5rem;font-weight:700;color:var(--brown)} .card .l{font-size:.82rem;color:var(--mute)}
+.nav-back{display:inline-block;margin-bottom:18px;color:var(--brown);text-decoration:none;font-size:.9rem}
+.nav-back:hover{text-decoration:underline}
+.cmt{font-size:.86rem;margin:3px 0;padding-left:4px}
+.cmt code{font-size:.8em}
+ul.bare{list-style:none;padding:0}</style></head><body>
+<a class="nav-back" href="index.html">← 개발일지 목록</a>
+<h1>2026-06-16 (화)</h1>
+<div class="subtitle">커밋 로그 기반 자동 재구성 (backfill) · magicJar 한국 주식 자동매매 시스템</div>
+
+<div class="grid">
+  <div class="card"><div class="n">42</div><div class="l">커밋</div></div>
+  <div class="card"><div class="n">7</div><div class="l">활동 에이전트</div></div>
+  <div class="card"><div class="n">2</div><div class="l">머지 PR</div></div>
+  <div class="card"><div class="n">143</div><div class="l">변경 파일</div></div>
+  <div class="card"><div class="n" style="color:var(--ok)">+11,569</div><div class="l">추가 라인</div></div>
+  <div class="card"><div class="n" style="color:var(--todo)">−755</div><div class="l">삭제 라인</div></div>
+</div>
+
+<h2>👥 에이전트별 작업</h2>
+<table><thead><tr><th>에이전트</th><th>역할</th><th>커밋</th><th>대표 작업</th></tr></thead><tbody>
+<tr><td><code>backend-core</code></td><td>백엔드 코어</td><td>18</td><td>chore(task): mark strategy-perf batch backfill task DONE (PR #1026)</td></tr>
+<tr><td><code>frontend</code></td><td>프런트</td><td>9</td><td>chore(task): mark strategy performance UI task DONE (PR #1027)</td></tr>
+<tr><td><code>strategy</code></td><td>전략 엔진</td><td>6</td><td>chore(task): mark strategy-perf-domain-calc DONE (PR #1023)</td></tr>
+<tr><td><code>orchestrator</code></td><td>오케스트라</td><td>4</td><td>docs(ops): 2026-06-16 일일 운영 보고 (canary 4일차 — 손절 미작동 P0+매수사이징 재설계+리스크 가</td></tr>
+<tr><td><code>market-data</code></td><td>시세 데이터</td><td>2</td><td>chore(task): mark market-index-daily-rollup DONE (PR #1024)</td></tr>
+<tr><td><code>architect</code></td><td>수석 설계</td><td>2</td><td>chore(task): mark ADR 0126 task DONE (PR #1022)</td></tr>
+<tr><td><code>human-lead</code></td><td>사람(지휘)</td><td>1</td><td>docs(spec): 전략별 일자별 성과 히스토리 + 일자별 메모 설계</td></tr>
+</tbody></table>
+
+<h2>📐 아키텍처 결정 (ADR)</h2><p><span class="badge b-pending">ADR 0126</span></p>
+
+<h2>🗄️ DB 스키마 (Flyway)</h2><p><code>V84__system_config_realtime_fallback_buy.sql</code> · <code>V85__strategy_daily_performance.sql</code> · <code>V86__market_index_daily.sql</code> · <code>V87__strategy_daily_note.sql</code></p>
+
+<h2>🧩 모듈별 변경 파일</h2>
+<p><span class="badge b-mute">consumer · 48</span> <span class="badge b-mute">_workspace · 46</span> <span class="badge b-mute">api · 34</span> <span class="badge b-mute">root · 18</span> <span class="badge b-mute">frontend · 18</span> <span class="badge b-mute">batch · 15</span> <span class="badge b-mute">domain · 14</span> <span class="badge b-mute">persistence-shared · 1</span></p>
+
+<h2>📝 주요 커밋 (변경량 상위)</h2>
+<ul class="bare">
+<li class="cmt"><span class="badge b-mute">backend-core</span> fix(consumer): restore active strategy candle feed <code>d394ef3</code> <span style="color:var(--mute)">+1098/−299</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 전략 성과 히스토리 + 일자별 메모 UI (R3 · ADR 0126) <code>df41e10</code> <span style="color:var(--mute)">+1241/−0</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy/api): 리스크 한도 현재 사용량 조회 API 신설 (GET /api/risk/usage) <code>05cf848</code> <span style="color:var(--mute)">+1122/−60</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(api): 전략 성과/메모 영속 + 조회 API (R2 웨이브 A) <code>4d43faf</code> <span style="color:var(--mute)">+1085/−0</span></li>
+<li class="cmt"><span class="badge b-mute">orchestrator</span> docs(ops): trading incident 분석 addendum + redis key usage map (2026-06-15 운영 산출) <code>48e9ade</code> <span style="color:var(--mute)">+1013/−0</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> feat(batch): 전략 성과 일배치 확장 + 백필 잡 (R2 웨이브 B, ADR 0126) <code>76f5cdd</code> <span style="color:var(--mute)">+928/−1</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> feat(strategy): 전략별 일자별 성과 — 왕복 집계+신뢰도 순수 계산기 (R1 도메인) <code>dacfb85</code> <span style="color:var(--mute)">+892/−0</span></li>
+<li class="cmt"><span class="badge b-mute">frontend</span> feat(frontend): 리스크 설정 화면에 한도 사용량 게이지 4종 보강 <code>e8874d2</code> <span style="color:var(--mute)">+780/−7</span></li>
+<li class="cmt"><span class="badge b-mute">market-data</span> feat(market-data): 지수 일봉 롤업 + 레짐 분류 수직 슬라이스 (R2-A) <code>6327cbf</code> <span style="color:var(--mute)">+745/−0</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> fix(consumer): recover no-tick ws candles via 1m fallback <code>42fb463</code> <span style="color:var(--mute)">+412/−1</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> fix(strategy/consumer): 매수 사이징 계좌 전체 공유 풀 + 비율 한도 복원 재설계 <code>5693335</code> <span style="color:var(--mute)">+259/−66</span></li>
+<li class="cmt"><span class="badge b-mute">strategy</span> fix(strategy/consumer): 매수 수량 산정을 예수금(주문가능금액) 기준으로 전환 <code>3022785</code> <span style="color:var(--mute)">+270/−46</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> fix(consumer): restore stop-loss on fallback candles <code>be01504</code> <span style="color:var(--mute)">+289/−13</span></li>
+<li class="cmt"><span class="badge b-mute">architect</span> docs(adr): ADR 0126 전략별 일자별 성과 누적 원장 + 시장 레짐/α + 일자별 메모 <code>582b928</code> <span style="color:var(--mute)">+223/−4</span></li>
+<li class="cmt"><span class="badge b-mute">human-lead</span> docs(spec): 전략별 일자별 성과 히스토리 + 일자별 메모 설계 <code>ce28c9a</code> <span style="color:var(--mute)">+222/−0</span></li>
+<li class="cmt"><span class="badge b-mute">backend-core</span> fix(api): 포지션 한도 사용량 capital 미상 시 config 파생값 부분렌더 <code>55e41bc</code> <span style="color:var(--mute)">+153/−44</span></li>
+</ul>
+
+<h2>🔀 머지된 PR (2)</h2><p><span class="badge b-ok">#1013</span> <span class="badge b-ok">#1014</span></p>
+
+<footer style="margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:#888;font-size:.82rem">
+자동 생성 · <code>scripts/gen-devlogs.mjs</code> · 비공개 레포 커밋 메타데이터 집계 (소스·시크릿 미포함)
+</footer></body></html>

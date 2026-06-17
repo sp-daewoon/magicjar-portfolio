@@ -30,7 +30,7 @@
 | | |
 |---|---|
 | **기간** | 2026-04 ~ (약 6주 집중 개발) |
-| **규모** | 1,850+ 커밋 · 120+ PR · 55 릴리즈 · 257K+ LOC |
+| **규모** | 1,910+ 커밋 · 130+ PR · 55 릴리즈 · 266K+ LOC |
 | **백엔드** | Spring Boot 3.3 · Kotlin 2.0 (K2) · JDK 21 · Gradle KTS 멀티모듈(7) |
 | **프런트** | React 19 · TypeScript · Vite · Tailwind · TradingView Lightweight Charts v4 |
 | **데이터/인프라** | 한국투자증권(KIS) OpenAPI(REST+WebSocket) · Kafka · PostgreSQL · Redis · Docker Compose |
